@@ -14,7 +14,7 @@
                             <h5>{{ $campus->name }}</h5>
                         </a>
 
-                        <p>3 available printing services outlet in {{ $campus->name }}</p>
+                        <p>{{ $campus->outlets->count() }} printing service outlets at {{ $campus->name }}</p>
 
                     </div>
                 </div>
