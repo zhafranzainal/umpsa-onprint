@@ -12,8 +12,10 @@ class InventorySeeder extends Seeder
      */
     public function run(): void
     {
-        Inventory::factory()
-            ->count(5)
-            ->create();
+        Inventory::create(['name' => 'A4 paper']);
+        Inventory::create(['name' => 'ink bottle']);
+        Inventory::create(['name' => 'binder']);
+        Inventory::create(['name' => 'lamination paper']);
+        Inventory::create(['name' => 'solvent']);
     }
 }

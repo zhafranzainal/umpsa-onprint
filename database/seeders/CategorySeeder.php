@@ -12,8 +12,10 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::factory()
-            ->count(5)
-            ->create();
+        Category::create(['name' => 'Comb Bind Notebook']);
+        Category::create(['name' => 'Tape Bind Notebook']);
+        Category::create(['name' => 'Certificate Printing']);
+        Category::create(['name' => 'Thesis Hard Cover']);
+        Category::create(['name' => 'Poster']);
     }
 }

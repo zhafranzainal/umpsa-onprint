@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Rider;
-use Illuminate\Support\Str;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RiderFactory extends Factory
@@ -23,8 +23,8 @@ class RiderFactory extends Factory
     public function definition(): array
     {
         return [
-            'total_commission' => $this->faker->randomNumber(2),
-            'user_id' => \App\Models\User::factory(),
+            'total_commission' => $this->faker->randomFloat(2, 5, 100),
+            'user_id' => User::inRandomOrder()->pluck('id')->first(),
         ];
     }
 }

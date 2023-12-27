@@ -12,8 +12,14 @@ class DeliveryOptionSeeder extends Seeder
      */
     public function run(): void
     {
-        DeliveryOption::factory()
-            ->count(5)
-            ->create();
+        DeliveryOption::create([
+            'name' => 'delivery',
+            'price' => 5
+        ]);
+
+        DeliveryOption::create([
+            'name' => 'self-pick up',
+            'price' => 2.5
+        ]);
     }
 }

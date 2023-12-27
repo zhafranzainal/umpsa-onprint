@@ -23,8 +23,8 @@ class DeliveryOptionFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
-            'price' => $this->faker->randomNumber(1),
+            'name' => $this->faker->word(),
+            'price' => $this->faker->randomFloat(2, 5, 30),
         ];
     }
 }

@@ -12,8 +12,7 @@ class CampusSeeder extends Seeder
      */
     public function run(): void
     {
-        Campus::factory()
-            ->count(5)
-            ->create();
+        Campus::create(['name' => 'UMPSA Pekan']);
+        Campus::create(['name' => 'UMPSA Gambang']);
     }
 }

@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Delivery;
-use Illuminate\Support\Str;
+use App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DeliveryFactory extends Factory
@@ -23,9 +23,9 @@ class DeliveryFactory extends Factory
     public function definition(): array
     {
         return [
-            'commission_fee' => $this->faker->randomNumber(2),
+            'commission_fee' => $this->faker->randomFloat(2, 5, 30),
             'delivered_date' => $this->faker->dateTime(),
-            'transaction_id' => \App\Models\Transaction::factory(),
+            'transaction_id' => Transaction::inRandomOrder()->pluck('id')->first(),
         ];
     }
 }

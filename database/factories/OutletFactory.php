@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Campus;
 use App\Models\Outlet;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OutletFactory extends Factory
@@ -23,8 +23,8 @@ class OutletFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
-            'campus_id' => \App\Models\Campus::factory(),
+            'name' => $this->faker->word(),
+            'campus_id' => Campus::inRandomOrder()->pluck('id')->first(),
         ];
     }
 }

@@ -2,8 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\DeliveryOption;
 use App\Models\Order;
-use Illuminate\Support\Str;
+use App\Models\Outlet;
+use App\Models\Package;
+use App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OrderFactory extends Factory
@@ -23,16 +26,16 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'document_file' => $this->faker->text(255),
-            'quantity' => $this->faker->randomNumber(),
-            'total_price' => $this->faker->randomNumber(2),
-            'point' => $this->faker->randomNumber(0),
+            'document_file' => $this->faker->file(storage_path('app\public\documents'), public_path('storage\documents'), false),
+            'quantity' => $this->faker->randomNumber(2, false),
+            'total_price' => $this->faker->randomFloat(2, 5, 100),
+            'point' => $this->faker->randomNumber(2),
             'status' => 'pending',
-            'qr_code' => $this->faker->text(),
-            'outlet_id' => \App\Models\Outlet::factory(),
-            'package_id' => \App\Models\Package::factory(),
-            'delivery_option_id' => \App\Models\DeliveryOption::factory(),
-            'transaction_id' => \App\Models\Transaction::factory(),
+            'qr_code' => $this->faker->image(public_path('storage\images'), 640, 480, null, false),
+            'outlet_id' => Outlet::inRandomOrder()->pluck('id')->first(),
+            'package_id' => Package::inRandomOrder()->pluck('id')->first(),
+            'delivery_option_id' => DeliveryOption::inRandomOrder()->pluck('id')->first(),
+            'transaction_id' => Transaction::factory(),
         ];
     }
 }

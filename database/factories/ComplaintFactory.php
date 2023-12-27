@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Complaint;
-use Illuminate\Support\Str;
+use App\Models\Delivery;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ComplaintFactory extends Factory
@@ -25,7 +25,7 @@ class ComplaintFactory extends Factory
         return [
             'description' => $this->faker->sentence(15),
             'status' => 'open',
-            'delivery_id' => \App\Models\Delivery::factory(),
+            'delivery_id' => Delivery::inRandomOrder()->pluck('id')->first(),
         ];
     }
 }
