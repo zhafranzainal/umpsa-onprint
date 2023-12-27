@@ -31,28 +31,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/dashboard', function () {
-        return view('dashboard');
-    })
-    ->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
-Route::prefix('/')
-    ->middleware(['auth:sanctum', 'verified'])
-    ->group(function () {
-        Route::resource('roles', RoleController::class);
-        Route::resource('permissions', PermissionController::class);
+Route::prefix('/')->middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::resource('roles', RoleController::class);
+    Route::resource('permissions', PermissionController::class);
 
-        Route::resource('categories', CategoryController::class);
-        Route::resource('deliveries', DeliveryController::class);
-        Route::resource('delivery-options', DeliveryOptionController::class);
-        Route::resource('feedbacks', FeedbackController::class);
-        Route::resource('inventories', InventoryController::class);
-        Route::resource('outlets', OutletController::class);
-        Route::resource('packages', PackageController::class);
-        Route::resource('riders', RiderController::class);
-        Route::resource('users', UserController::class);
-        Route::resource('orders', OrderController::class);
-        Route::resource('transactions', TransactionController::class);
-        Route::resource('complaints', ComplaintController::class);
-    });
+    Route::resource('categories', CategoryController::class);
+    Route::resource('deliveries', DeliveryController::class);
+    Route::resource('delivery-options', DeliveryOptionController::class);
+    Route::resource('feedbacks', FeedbackController::class);
+    Route::resource('inventories', InventoryController::class);
+    Route::resource('outlets', OutletController::class);
+    Route::resource('packages', PackageController::class);
+    Route::resource('riders', RiderController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('orders', OrderController::class);
+    Route::resource('transactions', TransactionController::class);
+    Route::resource('complaints', ComplaintController::class);
+});
