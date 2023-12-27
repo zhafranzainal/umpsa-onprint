@@ -15,6 +15,7 @@ use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DeliveryOptionController;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,8 @@ use App\Http\Controllers\DeliveryOptionController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $categories = Category::All();
+    return view('welcome', compact('categories'));
 });
 
 Route::prefix('/')->middleware(['auth:sanctum', 'verified'])->group(function () {

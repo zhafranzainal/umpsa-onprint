@@ -85,116 +85,21 @@
 
         <div class="row">
 
-            <div class="col-md-3">
-                <div class="card">
+            @foreach ($categories as $category)
+                <div class="col-md-3">
+                    <div class="card">
 
-                    <img class="card-img-top img-fluid" src="{{ asset('assets/images/comb_bind_notebook.jpg') }}"
-                        alt="Card image cap">
+                        <img class="card-img-top img-fluid" src="{{ asset($category->image) }}" alt="Card image cap">
 
-                    <div class="card-body">
-
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">
-                                Comb Bind Notebook</a>
-                        </p>
-
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">34 reviews</label>
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{ $category->name }}
+                            </p>
                         </div>
 
-                        <p class="card-cost">RM179.00</p>
-
                     </div>
-
                 </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-
-                    <img class="card-img-top img-fluid" src="{{ asset('assets/images/tape_bind_notebook.jpg') }}"
-                        alt="Card image cap">
-
-                    <div class="card-body">
-
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Tape Bind
-                                Notebook</a>
-                        </p>
-
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">30 reviews</label>
-                        </div>
-
-                        <p class="card-cost">RM280.00</p>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-
-                    <img class="card-img-top img-fluid" src="{{ asset('assets/images/certificate_printing.jpg') }}"
-                        alt="Card image cap">
-
-                    <div class="card-body">
-
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Certificate
-                                Printing</a>
-                        </p>
-
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">28 reviews</label>
-                        </div>
-
-                        <p class="card-cost">RM56.00</p>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-
-                    <img class="card-img-top img-fluid" src="{{ asset('assets/images/thesis_hard_cover.jpg') }}"
-                        alt="Card image cap">
-
-                    <div class="card-body">
-
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Thesis Hard Cover</a>
-                        </p>
-
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">25 reviews</label>
-                        </div>
-
-                        <p class="card-cost">RM179.00</p>
-
-                    </div>
-
-                </div>
-            </div>
+            @endforeach
 
         </div>
 

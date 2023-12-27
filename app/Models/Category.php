@@ -13,7 +13,7 @@ class Category extends Model
     use Searchable;
     use SoftDeletes;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'image'];
 
     protected $searchableFields = ['*'];
 

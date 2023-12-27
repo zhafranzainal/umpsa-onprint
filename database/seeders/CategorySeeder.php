@@ -12,10 +12,29 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create(['name' => 'Comb Bind Notebook']);
-        Category::create(['name' => 'Tape Bind Notebook']);
-        Category::create(['name' => 'Certificate Printing']);
-        Category::create(['name' => 'Thesis Hard Cover']);
-        Category::create(['name' => 'Poster']);
+        Category::create([
+            'name' => 'Comb Bind Notebook',
+            'image' => 'assets/images/comb_bind_notebook.jpg'
+        ]);
+
+        Category::create([
+            'name' => 'Tape Bind Notebook',
+            'image' => 'assets/images/tape_bind_notebook.jpg'
+        ]);
+
+        Category::create([
+            'name' => 'Certificate Printing',
+            'image' => 'assets/images/certificate_printing.jpg'
+        ]);
+
+        Category::create([
+            'name' => 'Thesis Hard Cover',
+            'image' => 'assets/images/thesis_hard_cover.jpg'
+        ]);
+
+        Category::create([
+            'name' => 'Poster',
+            'image' => 'assets/images/poster.jpg'
+        ]);
     }
 }
