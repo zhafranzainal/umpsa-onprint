@@ -29,7 +29,7 @@ class OrderController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.orders.index', compact('orders', 'search'));
+        return view('orders.index', compact('orders', 'search'));
     }
 
     /**
@@ -73,7 +73,7 @@ class OrderController extends Controller
     {
         $this->authorize('view', $order);
 
-        return view('app.orders.show', compact('order'));
+        return view('orders.show', compact('order'));
     }
 
     /**

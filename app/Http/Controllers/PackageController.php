@@ -26,7 +26,7 @@ class PackageController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.packages.index', compact('packages', 'search'));
+        return view('packages.index', compact('packages', 'search'));
     }
 
     /**
@@ -38,7 +38,7 @@ class PackageController extends Controller
 
         $categories = Category::pluck('name', 'id');
 
-        return view('app.packages.create', compact('categories'));
+        return view('packages.create', compact('categories'));
     }
 
     /**
@@ -64,7 +64,7 @@ class PackageController extends Controller
     {
         $this->authorize('view', $package);
 
-        return view('app.packages.show', compact('package'));
+        return view('packages.show', compact('package'));
     }
 
     /**
@@ -76,7 +76,7 @@ class PackageController extends Controller
 
         $categories = Category::pluck('name', 'id');
 
-        return view('app.packages.edit', compact('package', 'categories'));
+        return view('packages.edit', compact('package', 'categories'));
     }
 
     /**

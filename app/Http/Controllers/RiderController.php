@@ -26,7 +26,7 @@ class RiderController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.riders.index', compact('riders', 'search'));
+        return view('riders.index', compact('riders', 'search'));
     }
 
     /**
@@ -38,7 +38,7 @@ class RiderController extends Controller
 
         $users = User::pluck('name', 'id');
 
-        return view('app.riders.create', compact('users'));
+        return view('riders.create', compact('users'));
     }
 
     /**
@@ -64,7 +64,7 @@ class RiderController extends Controller
     {
         $this->authorize('view', $rider);
 
-        return view('app.riders.show', compact('rider'));
+        return view('riders.show', compact('rider'));
     }
 
     /**
@@ -76,7 +76,7 @@ class RiderController extends Controller
 
         $users = User::pluck('name', 'id');
 
-        return view('app.riders.edit', compact('rider', 'users'));
+        return view('riders.edit', compact('rider', 'users'));
     }
 
     /**

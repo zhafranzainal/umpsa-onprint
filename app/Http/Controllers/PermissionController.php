@@ -21,7 +21,7 @@ class PermissionController extends Controller
         $search = $request->get('search', '');
         $permissions = Permission::where('name', 'like', "%{$search}%")->paginate(10);
 
-        return view('app.permissions.index')
+        return view('permissions.index')
             ->with('permissions', $permissions)
             ->with('search', $search);
     }
@@ -34,7 +34,7 @@ class PermissionController extends Controller
         $this->authorize('create', Permission::class);
 
         $roles = Role::all();
-        return view('app.permissions.create')->with('roles', $roles);
+        return view('permissions.create')->with('roles', $roles);
     }
 
     /**
@@ -52,7 +52,7 @@ class PermissionController extends Controller
         ]);
 
         $permission = Permission::create($data);
-        
+
         $roles = Role::find($request->roles);
         $permission->syncRoles($roles);
 
@@ -68,7 +68,7 @@ class PermissionController extends Controller
     {
         $this->authorize('view', Permission::class);
 
-        return view('app.permissions.show')->with('permission', $permission);
+        return view('permissions.show')->with('permission', $permission);
     }
 
     /**
@@ -80,7 +80,7 @@ class PermissionController extends Controller
 
         $roles = Role::get();
 
-        return view('app.permissions.edit')
+        return view('permissions.edit')
             ->with('permission', $permission)
             ->with('roles', $roles);
     }
@@ -98,7 +98,7 @@ class PermissionController extends Controller
         ]);
 
         $permission->update($data);
-        
+
         $roles = Role::find($request->roles);
         $permission->syncRoles($roles);
 

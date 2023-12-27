@@ -21,7 +21,7 @@ class RoleController extends Controller {
         $search = $request->get('search', '');
         $roles = Role::where('name', 'like', "%{$search}%")->paginate(10);
 
-        return view('app.roles.index')
+        return view('roles.index')
             ->with('roles', $roles)
             ->with('search', $search);
     }
@@ -35,7 +35,7 @@ class RoleController extends Controller {
 
         $permissions = Permission::all();
 
-        return view('app.roles.create')->with('permissions', $permissions);
+        return view('roles.create')->with('permissions', $permissions);
     }
 
     /**
@@ -69,7 +69,7 @@ class RoleController extends Controller {
     {
         $this->authorize('view', Role::class);
 
-        return view('app.roles.show')->with('role', $role);
+        return view('roles.show')->with('role', $role);
     }
 
     /**
@@ -81,7 +81,7 @@ class RoleController extends Controller {
 
         $permissions = Permission::all();
 
-        return view('app.roles.edit')
+        return view('roles.edit')
             ->with('role', $role)
             ->with('permissions', $permissions);
     }
@@ -97,7 +97,7 @@ class RoleController extends Controller {
             'name' => 'required|max:32|unique:roles,name,'.$role->id,
             'permissions' => 'array',
         ]);
-        
+
         $role->update($data);
 
         $permissions = Permission::find($request->permissions);

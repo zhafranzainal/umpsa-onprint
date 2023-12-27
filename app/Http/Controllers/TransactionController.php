@@ -41,7 +41,7 @@ class TransactionController extends Controller
 
         $users = User::pluck('name', 'id');
 
-        return view('app.transactions.create', compact('users'));
+        return view('transactions.create', compact('users'));
     }
 
     /**
@@ -67,7 +67,7 @@ class TransactionController extends Controller
     {
         $this->authorize('view', $transaction);
 
-        return view('app.transactions.show', compact('transaction'));
+        return view('transactions.show', compact('transaction'));
     }
 
     /**
@@ -79,7 +79,7 @@ class TransactionController extends Controller
 
         $users = User::pluck('name', 'id');
 
-        return view('app.transactions.edit', compact('transaction', 'users'));
+        return view('transactions.edit', compact('transaction', 'users'));
     }
 
     /**

@@ -38,7 +38,7 @@ class DeliveryOptionController extends Controller
     {
         $this->authorize('create', DeliveryOption::class);
 
-        return view('app.delivery_options.create');
+        return view('delivery_options.create');
     }
 
     /**
@@ -64,7 +64,7 @@ class DeliveryOptionController extends Controller
     {
         $this->authorize('view', $deliveryOption);
 
-        return view('app.delivery_options.show', compact('deliveryOption'));
+        return view('delivery_options.show', compact('deliveryOption'));
     }
 
     /**
@@ -74,7 +74,7 @@ class DeliveryOptionController extends Controller
     {
         $this->authorize('update', $deliveryOption);
 
-        return view('app.delivery_options.edit', compact('deliveryOption'));
+        return view('delivery_options.edit', compact('deliveryOption'));
     }
 
     /**

@@ -26,7 +26,7 @@ class DeliveryController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.deliveries.index', compact('deliveries', 'search'));
+        return view('deliveries.index', compact('deliveries', 'search'));
     }
 
     /**
@@ -38,7 +38,7 @@ class DeliveryController extends Controller
 
         $transactions = Transaction::pluck('id', 'id');
 
-        return view('app.deliveries.create', compact('transactions'));
+        return view('deliveries.create', compact('transactions'));
     }
 
     /**
@@ -64,7 +64,7 @@ class DeliveryController extends Controller
     {
         $this->authorize('view', $delivery);
 
-        return view('app.deliveries.show', compact('delivery'));
+        return view('deliveries.show', compact('delivery'));
     }
 
     /**
@@ -76,7 +76,7 @@ class DeliveryController extends Controller
 
         $transactions = Transaction::pluck('id', 'id');
 
-        return view('app.deliveries.edit', compact('delivery', 'transactions'));
+        return view('deliveries.edit', compact('delivery', 'transactions'));
     }
 
     /**

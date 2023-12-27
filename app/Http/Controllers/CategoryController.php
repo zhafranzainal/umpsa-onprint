@@ -25,7 +25,7 @@ class CategoryController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.categories.index', compact('categories', 'search'));
+        return view('categories.index', compact('categories', 'search'));
     }
 
     /**
@@ -35,7 +35,7 @@ class CategoryController extends Controller
     {
         $this->authorize('create', Category::class);
 
-        return view('app.categories.create');
+        return view('categories.create');
     }
 
     /**
@@ -61,7 +61,7 @@ class CategoryController extends Controller
     {
         $this->authorize('view', $category);
 
-        return view('app.categories.show', compact('category'));
+        return view('categories.show', compact('category'));
     }
 
     /**
@@ -71,7 +71,7 @@ class CategoryController extends Controller
     {
         $this->authorize('update', $category);
 
-        return view('app.categories.edit', compact('category'));
+        return view('categories.edit', compact('category'));
     }
 
     /**

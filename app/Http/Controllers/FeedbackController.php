@@ -26,7 +26,7 @@ class FeedbackController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.feedbacks.index', compact('feedbacks', 'search'));
+        return view('feedbacks.index', compact('feedbacks', 'search'));
     }
 
     /**
@@ -38,7 +38,7 @@ class FeedbackController extends Controller
 
         $complaints = Complaint::pluck('description', 'id');
 
-        return view('app.feedbacks.create', compact('complaints'));
+        return view('feedbacks.create', compact('complaints'));
     }
 
     /**
@@ -64,7 +64,7 @@ class FeedbackController extends Controller
     {
         $this->authorize('view', $feedback);
 
-        return view('app.feedbacks.show', compact('feedback'));
+        return view('feedbacks.show', compact('feedback'));
     }
 
     /**
@@ -76,7 +76,7 @@ class FeedbackController extends Controller
 
         $complaints = Complaint::pluck('description', 'id');
 
-        return view('app.feedbacks.edit', compact('feedback', 'complaints'));
+        return view('feedbacks.edit', compact('feedback', 'complaints'));
     }
 
     /**

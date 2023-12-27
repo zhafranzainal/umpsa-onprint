@@ -26,7 +26,7 @@ class OutletController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.outlets.index', compact('outlets', 'search'));
+        return view('outlets.index', compact('outlets', 'search'));
     }
 
     /**
@@ -38,7 +38,7 @@ class OutletController extends Controller
 
         $campuses = Campus::pluck('name', 'id');
 
-        return view('app.outlets.create', compact('campuses'));
+        return view('outlets.create', compact('campuses'));
     }
 
     /**
@@ -64,7 +64,7 @@ class OutletController extends Controller
     {
         $this->authorize('view', $outlet);
 
-        return view('app.outlets.show', compact('outlet'));
+        return view('outlets.show', compact('outlet'));
     }
 
     /**
@@ -76,7 +76,7 @@ class OutletController extends Controller
 
         $campuses = Campus::pluck('name', 'id');
 
-        return view('app.outlets.edit', compact('outlet', 'campuses'));
+        return view('outlets.edit', compact('outlet', 'campuses'));
     }
 
     /**

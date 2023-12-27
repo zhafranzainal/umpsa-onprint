@@ -25,7 +25,7 @@ class InventoryController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.inventories.index', compact('inventories', 'search'));
+        return view('inventories.index', compact('inventories', 'search'));
     }
 
     /**
@@ -35,7 +35,7 @@ class InventoryController extends Controller
     {
         $this->authorize('create', Inventory::class);
 
-        return view('app.inventories.create');
+        return view('inventories.create');
     }
 
     /**
@@ -61,7 +61,7 @@ class InventoryController extends Controller
     {
         $this->authorize('view', $inventory);
 
-        return view('app.inventories.show', compact('inventory'));
+        return view('inventories.show', compact('inventory'));
     }
 
     /**
@@ -71,7 +71,7 @@ class InventoryController extends Controller
     {
         $this->authorize('update', $inventory);
 
-        return view('app.inventories.edit', compact('inventory'));
+        return view('inventories.edit', compact('inventory'));
     }
 
     /**

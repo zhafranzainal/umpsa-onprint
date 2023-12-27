@@ -26,7 +26,7 @@ class ComplaintController extends Controller
             ->paginate(5)
             ->withQueryString();
 
-        return view('app.complaints.index', compact('complaints', 'search'));
+        return view('complaints.index', compact('complaints', 'search'));
     }
 
     /**
@@ -38,7 +38,7 @@ class ComplaintController extends Controller
 
         $deliveries = Delivery::pluck('delivered_date', 'id');
 
-        return view('app.complaints.create', compact('deliveries'));
+        return view('complaints.create', compact('deliveries'));
     }
 
     /**
@@ -64,7 +64,7 @@ class ComplaintController extends Controller
     {
         $this->authorize('view', $complaint);
 
-        return view('app.complaints.show', compact('complaint'));
+        return view('complaints.show', compact('complaint'));
     }
 
     /**
@@ -76,7 +76,7 @@ class ComplaintController extends Controller
 
         $deliveries = Delivery::pluck('delivered_date', 'id');
 
-        return view('app.complaints.edit', compact('complaint', 'deliveries'));
+        return view('complaints.edit', compact('complaint', 'deliveries'));
     }
 
     /**
