@@ -76,13 +76,16 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse pl-4" id="navbarNav">
             <ul class="navbar-nav">
 
                 <li class="nav-item dropdown">
 
                     <a class="nav-link dropdown" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false"> <span> ≡ All Category</span></a>
+                        aria-haspopup="true" aria-expanded="false">
+                        <span> ≡ All Category</span>
+                    </a>
 
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Comb Bind Notebook</a>
@@ -102,15 +105,22 @@
                     </a>
 
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="(3) Printing Order/campus-pekan.php">UMP Pekan</a>
-                        <a class="dropdown-item" href="(3) Printing Order/campus-gambang.php">UMP Gambang</a>
+
+                        <a class="dropdown-item" href="{{ route('orders.show-campus', ['campus' => 1]) }}">
+                            UMPSA Pekan
+                        </a>
+
+                        <a class="dropdown-item" href="{{ route('orders.show-campus', ['campus' => 2]) }}">
+                            UMPSA Gambang
+                        </a>
+
                     </div>
 
                 </li>
 
             </ul>
         </div>
-    </nav>
 
+    </nav>
 </div>
 <hr>
