@@ -12,6 +12,7 @@ use App\Models\DeliveryOption;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\OrderStoreRequest;
 use App\Http\Requests\OrderUpdateRequest;
+use App\Models\Campus;
 
 class OrderController extends Controller
 {
@@ -20,16 +21,10 @@ class OrderController extends Controller
      */
     public function index(Request $request): View
     {
-        $this->authorize('view-any', Order::class);
+        $this->authorize('view-any', Campus::class);
 
-        $search = $request->get('search', '');
-
-        $orders = Order::search($search)
-            ->latest()
-            ->paginate(5)
-            ->withQueryString();
-
-        return view('orders.index', compact('orders', 'search'));
+        $campuses = Campus::All();
+        return view('orders.index', compact('campuses'));
     }
 
     /**
