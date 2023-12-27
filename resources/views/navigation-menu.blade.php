@@ -5,7 +5,7 @@
             <div class="col-md-7 mt-2">
                 <ul>
                     <li><a href="{{ route('dashboard') }}">Home</a></li>
-                    <li><a href="{{ route('orders.index') }}">Order</a></li>
+                    <li><a href="{{ route('orders.index-campus') }}">Order</a></li>
                     <li><a href="(4) Payment/payment.php">Payment</a></li>
                     <li><a href="{{ route('deliveries.index') }}">Delivery</a></li>
                     <li><a href="(6) Sales and Admin/admin.html">Sales and Admin</a></li>

@@ -48,7 +48,10 @@ Route::prefix('/')->middleware(['auth:sanctum', 'verified'])->group(function () 
     Route::resource('packages', PackageController::class);
     Route::resource('riders', RiderController::class);
     Route::resource('users', UserController::class);
+
+    Route::get('orders/campus', [OrderController::class, 'indexCampus'])->name('orders.index-campus');;
     Route::resource('orders', OrderController::class);
+
     Route::resource('transactions', TransactionController::class);
     Route::resource('complaints', ComplaintController::class);
 });

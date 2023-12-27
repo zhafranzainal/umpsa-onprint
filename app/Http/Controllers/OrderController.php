@@ -16,6 +16,18 @@ use App\Models\Campus;
 
 class OrderController extends Controller
 {
+
+    /**
+     * Display a listing of the campus.
+     */
+    public function indexCampus(Request $request): View
+    {
+        $this->authorize('view-any', Campus::class);
+
+        $campuses = Campus::All();
+        return view('orders.index-campus', compact('campuses'));
+    }
+
     /**
      * Display a listing of the resource.
      */
