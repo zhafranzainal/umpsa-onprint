@@ -15,7 +15,7 @@
             @if (Route::has('login'))
                 <div class="col-md-5 mt-2 ">
                     @auth
-                        <h6><a href="{{ url('/dashboard') }}" style="color: white;">Dashboard</a></h6>
+                        <h6>Welcome to OnPrint!</h6>
                     @else
                         <h6><a href="{{ route('login') }}" style="color: white;">Login</a></h6>
                     @endauth
