@@ -29,6 +29,16 @@ class OrderController extends Controller
     }
 
     /**
+     * Display the specified campus.
+     */
+    public function showCampus(Request $request, Campus $campus): View
+    {
+        $this->authorize('view', $campus);
+
+        return view('orders.show-campus', compact('campus'));
+    }
+
+    /**
      * Display a listing of the resource.
      */
     public function index(Request $request): View

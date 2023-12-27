@@ -50,6 +50,7 @@ Route::prefix('/')->middleware(['auth:sanctum', 'verified'])->group(function () 
     Route::resource('users', UserController::class);
 
     Route::get('orders/campus', [OrderController::class, 'indexCampus'])->name('orders.index-campus');;
+    Route::get('orders/campus/{campus}', [OrderController::class, 'showCampus'])->name('orders.show-campus');;
     Route::resource('orders', OrderController::class);
 
     Route::resource('transactions', TransactionController::class);
