@@ -75,16 +75,7 @@
                                 {{ $category->name }}
                             </p>
 
-                            <div class="ratings">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-secondary"></i>
-                                <label class="text-secondary ml-3">30 reviews</label>
-                            </div>
-
-                            <p class="card-cost">RM7.00</p>
+                            <p class="card-cost">RM{{ $category->price }}</p>
                             <a href="cart.php"><button>Add to Cart</button></a>
 
                             <form action="/action_page.php">
