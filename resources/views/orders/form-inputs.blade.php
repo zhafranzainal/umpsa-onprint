@@ -64,22 +64,25 @@
 
     <x-inputs.group class="w-full">
         <x-inputs.text name="document_file" label="Document File" :value="old('document_file', $editing ? $order->document_file : '')" maxlength="255"
-            placeholder="Document File" required></x-inputs.text>
+            placeholder="Document File" required>
+        </x-inputs.text>
     </x-inputs.group>
 
     <x-inputs.group class="w-full">
         <x-inputs.number name="quantity" label="Quantity" :value="old('quantity', $editing ? $order->quantity : '')" max="255" placeholder="Quantity"
-            required></x-inputs.number>
+            required>
+        </x-inputs.number>
     </x-inputs.group>
 
     <x-inputs.group class="w-full">
         <x-inputs.number name="total_price" label="Total Price" :value="old('total_price', $editing ? $order->total_price : '')" max="255" step="0.01"
-            placeholder="Total Price" required></x-inputs.number>
+            placeholder="Total Price" required>
+        </x-inputs.number>
     </x-inputs.group>
 
     <x-inputs.group class="w-full">
-        <x-inputs.number name="point" label="Point" :value="old('point', $editing ? $order->point : '')" max="255" placeholder="Point"
-            required></x-inputs.number>
+        <x-inputs.number name="point" label="Point" :value="old('point', $editing ? $order->point : '')" max="255" placeholder="Point" required>
+        </x-inputs.number>
     </x-inputs.group>
 
     <x-inputs.group class="w-full">
@@ -98,7 +101,8 @@
 
     <x-inputs.group class="w-full">
         <x-inputs.textarea name="qr_code" label="Qr Code" maxlength="255"
-            required>{{ old('qr_code', $editing ? $order->qr_code : '') }}</x-inputs.textarea>
+            required>{{ old('qr_code', $editing ? $order->qr_code : '') }}
+        </x-inputs.textarea>
     </x-inputs.group>
 
 </div>
