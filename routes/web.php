@@ -47,9 +47,10 @@ Route::prefix('/')->middleware(['auth:sanctum', 'verified'])->group(function () 
     Route::resource('riders', RiderController::class);
     Route::resource('users', UserController::class);
 
-    Route::get('orders/campus', [OrderController::class, 'indexCampus'])->name('orders.index-campus');;
-    Route::get('orders/campus/{campus}', [OrderController::class, 'showCampus'])->name('orders.show-campus');;
-    Route::resource('orders', OrderController::class);
+    Route::get('orders/campus', [OrderController::class, 'indexCampus'])->name('orders.index-campus');
+    Route::get('orders/campus/{campus}', [OrderController::class, 'showCampus'])->name('orders.show-campus');
+    Route::post('orders/create', [OrderController::class, 'create'])->name('orders.create');
+    Route::post('orders', [OrderController::class, 'store'])->name('orders.store');
 
     Route::resource('transactions', TransactionController::class);
     Route::resource('complaints', ComplaintController::class);

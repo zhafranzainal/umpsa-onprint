@@ -20,12 +20,13 @@
     <x-inputs.group class="w-full" style="display: inline-block; width: 28%;">
         <x-inputs.select name="category_id" label="Category" required>
 
-            @php $selected = old('category_id', ($editing ? $order->category_id : '')) @endphp
+            @php $selected = old('category_id', ($editing ? $order->category_id : $categoryId)) @endphp
 
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the category</option>
+            <option disabled {{ empty($selected) ? 'selected' : $categoryId }}>Please select the category</option>
 
             @foreach ($categories as $value => $label)
-                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }}>{{ $label }}
+                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : $categoryId }}>
+                    {{ $label }}
                 </option>
             @endforeach
 

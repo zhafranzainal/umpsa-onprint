@@ -62,9 +62,11 @@ class OrderController extends Controller
         $deliveryOptions = DeliveryOption::pluck('name', 'id');
         $transactions = Transaction::pluck('id', 'id');
 
+        $categoryId = $request->input('category_id');
+
         return view(
             'orders.create',
-            compact('outlets', 'categories', 'deliveryOptions', 'transactions')
+            compact('outlets', 'categories', 'deliveryOptions', 'transactions', 'categoryId')
         );
     }
 
