@@ -28,7 +28,7 @@ return new class extends Migration
                 'picked up',
                 'completed',
             ])->default('pending');
-            $table->text('qr_code');
+            $table->text('qr_code')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

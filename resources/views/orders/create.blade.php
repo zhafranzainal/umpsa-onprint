@@ -13,16 +13,19 @@
                     <h5 class="text-dark pl-4">@lang('crud.orders.create_title')</h5>
 
                     <form method="POST" action="{{ route('orders.store') }}" class="mt-4">
+                        @csrf
 
                         @include('orders.form-inputs')
 
                         <div class="mt-10">
-
                             <button type="submit" class="button button-primary float-right">
                                 @lang('crud.common.create')
                             </button>
-
                         </div>
+
+                        @foreach ($errors->all() as $error)
+                            <span class="text-danger">{{ $error }}</span><br>
+                        @endforeach
 
                     </form>
 

@@ -21,7 +21,7 @@ class OrderStoreRequest extends FormRequest
     {
         return [
             'outlet_id' => ['required', 'exists:outlets,id'],
-            'package_id' => ['required', 'exists:packages,id'],
+            'category_id' => ['required', 'exists:categories,id'],
             'delivery_option_id' => ['required', 'exists:delivery_options,id'],
             'transaction_id' => ['required', 'exists:transactions,id'],
             'document_file' => ['required', 'max:255', 'string'],
@@ -32,7 +32,7 @@ class OrderStoreRequest extends FormRequest
                 'required',
                 'in:pending,ordered,prepared,picked up,completed',
             ],
-            'qr_code' => ['required', 'max:255', 'string'],
+            'qr_code' => ['nullable', 'max:255', 'string'],
         ];
     }
 }
