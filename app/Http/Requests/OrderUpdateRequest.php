@@ -26,7 +26,7 @@ class OrderUpdateRequest extends FormRequest
             'transaction_id' => ['required', 'exists:transactions,id'],
             'document_file' => ['required', 'max:255', 'string'],
             'quantity' => ['required', 'numeric'],
-            'total_price' => ['required', 'numeric'],
+            'total_price' => ['nullable', 'numeric'],
             'point' => ['required', 'numeric'],
             'status' => [
                 'required',

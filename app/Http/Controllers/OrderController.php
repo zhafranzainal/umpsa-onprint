@@ -62,14 +62,9 @@ class OrderController extends Controller
         $deliveryOptions = DeliveryOption::pluck('name', 'id');
         $transactions = Transaction::pluck('id', 'id');
 
-        $categoryId = $request->input('category_id');
-
-        $category = Category::find($categoryId);
-        $categoryPrice = $category ? $category->price : null;
-
         return view(
             'orders.create',
-            compact('outlets', 'categories', 'deliveryOptions', 'transactions', 'categoryId', 'categoryPrice')
+            compact('outlets', 'categories', 'deliveryOptions', 'transactions')
         );
     }
 
@@ -81,6 +76,10 @@ class OrderController extends Controller
         $this->authorize('create', Order::class);
 
         $validated = $request->validated();
+
+        $category = Category::findOrFail($validated['category_id']);
+        $totalPrice = $category->price * $validated['quantity'];
+        $validated['total_price'] = $totalPrice;
 
         $order = Order::create($validated);
 
@@ -129,6 +128,10 @@ class OrderController extends Controller
         $this->authorize('update', $order);
 
         $validated = $request->validated();
+
+        $category = Category::findOrFail($validated['category_id']);
+        $totalPrice = $category->price * $validated['quantity'];
+        $validated['total_price'] = $totalPrice;
 
         $order->update($validated);
 

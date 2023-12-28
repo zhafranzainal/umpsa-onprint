@@ -20,12 +20,12 @@
     <x-inputs.group class="w-full" style="display: inline-block; width: 28%;">
         <x-inputs.select name="category_id" label="Category" required>
 
-            @php $selected = old('category_id', ($editing ? $order->category_id : $categoryId)) @endphp
+            @php $selected = old('category_id', ($editing ? $order->category_id : '')) @endphp
 
-            <option disabled {{ empty($selected) ? 'selected' : $categoryId }}>Please select the category</option>
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the category</option>
 
             @foreach ($categories as $value => $label)
-                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : $categoryId }}>
+                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }}>
                     {{ $label }}
                 </option>
             @endforeach
@@ -72,12 +72,6 @@
     <x-inputs.group class="w-full" style="display: inline-block; width: 28%;">
         <x-inputs.number name="quantity" label="Quantity" :value="old('quantity', $editing ? $order->quantity : '')" max="255" placeholder="Quantity"
             required>
-        </x-inputs.number>
-    </x-inputs.group>
-
-    <x-inputs.group class="w-full" style="display: inline-block; width: 28%;">
-        <x-inputs.number name="total_price" label="Total Price" :value="old('total_price', $editing ? $order->total_price : $categoryPrice)" max="255" step="0.01"
-            placeholder="Total Price" required disabled>
         </x-inputs.number>
     </x-inputs.group>
 

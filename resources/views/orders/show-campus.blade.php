@@ -73,11 +73,7 @@
                             <p class="card-text">{{ $category->name }}</p>
                             <p class="card-cost">RM{{ $category->price }}</p>
 
-                            <form action="{{ route('orders.create') }}" method="POST">
-                                @csrf
-                                <input type="hidden" name="category_id" value="{{ $category->id }}">
-                                <button type="submit">Add to Cart</button>
-                            </form>
+                            <a href="{{ route('orders.create') }}"><button>Add to Cart</button></a>
 
                         </div>
 
