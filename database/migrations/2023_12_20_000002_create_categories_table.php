@@ -15,6 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('image');
+            $table->float('price');
 
             $table->timestamps();
             $table->softDeletes();

@@ -12,27 +12,27 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create([
+        Category::factory()->count(1)->create([
             'name' => 'Comb Bind Notebook',
-            'image' => 'assets/images/comb_bind_notebook.jpg'
+            'image' => 'assets/images/comb_bind_notebook.jpg',
         ]);
 
-        Category::create([
+        Category::factory()->count(1)->create([
             'name' => 'Tape Bind Notebook',
             'image' => 'assets/images/tape_bind_notebook.jpg'
         ]);
 
-        Category::create([
+        Category::factory()->count(1)->create([
             'name' => 'Certificate Printing',
             'image' => 'assets/images/certificate_printing.jpg'
         ]);
 
-        Category::create([
+        Category::factory()->count(1)->create([
             'name' => 'Thesis Hard Cover',
             'image' => 'assets/images/thesis_hard_cover.jpg'
         ]);
 
-        Category::create([
+        Category::factory()->count(1)->create([
             'name' => 'Poster',
             'image' => 'assets/images/poster.jpg'
         ]);

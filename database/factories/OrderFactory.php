@@ -2,10 +2,10 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\DeliveryOption;
 use App\Models\Order;
 use App\Models\Outlet;
-use App\Models\Package;
 use App\Models\Transaction;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -33,7 +33,7 @@ class OrderFactory extends Factory
             'status' => 'pending',
             'qr_code' => $this->faker->image(public_path('storage\images'), 640, 480, null, false),
             'outlet_id' => Outlet::inRandomOrder()->pluck('id')->first(),
-            'package_id' => Package::inRandomOrder()->pluck('id')->first(),
+            'category_id' => Category::inRandomOrder()->pluck('id')->first(),
             'delivery_option_id' => DeliveryOption::inRandomOrder()->pluck('id')->first(),
             'transaction_id' => Transaction::factory(),
         ];

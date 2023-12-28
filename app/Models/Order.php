@@ -15,7 +15,7 @@ class Order extends Model
 
     protected $fillable = [
         'outlet_id',
-        'package_id',
+        'category_id',
         'delivery_option_id',
         'transaction_id',
         'document_file',
@@ -33,9 +33,9 @@ class Order extends Model
         return $this->belongsTo(Outlet::class);
     }
 
-    public function package()
+    public function category()
     {
-        return $this->belongsTo(Package::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function deliveryOption()

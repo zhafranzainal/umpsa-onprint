@@ -13,12 +13,12 @@ class Category extends Model
     use Searchable;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'image'];
+    protected $fillable = ['name', 'image', 'price'];
 
     protected $searchableFields = ['*'];
 
-    public function packages()
+    public function orders()
     {
-        return $this->hasMany(Package::class);
+        return $this->hasMany(Order::class);
     }
 }
