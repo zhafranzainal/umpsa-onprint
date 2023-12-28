@@ -122,7 +122,7 @@ class OrderController extends Controller
         if ($request->hasFile('document_file')) {
 
             if ($order->document_file) {
-                Storage::delete($order->document_file);
+                Storage::delete('public/documents/' . $order->document_file);
             }
 
             $file = $request->file('document_file');
