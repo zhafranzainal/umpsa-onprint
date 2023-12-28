@@ -39,7 +39,7 @@ class InventoryControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.inventories.index')
+            ->assertViewIs('inventories.index')
             ->assertViewHas('inventories');
     }
 
@@ -50,7 +50,7 @@ class InventoryControllerTest extends TestCase
     {
         $response = $this->get(route('inventories.create'));
 
-        $response->assertOk()->assertViewIs('app.inventories.create');
+        $response->assertOk()->assertViewIs('inventories.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class InventoryControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.inventories.show')
+            ->assertViewIs('inventories.show')
             ->assertViewHas('inventory');
     }
 
@@ -97,7 +97,7 @@ class InventoryControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.inventories.edit')
+            ->assertViewIs('inventories.edit')
             ->assertViewHas('inventory');
     }
 

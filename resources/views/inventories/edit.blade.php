@@ -19,7 +19,7 @@
                     action="{{ route('inventories.update', $inventory) }}"
                     class="mt-4"
                 >
-                    @include('app.inventories.form-inputs')
+                    @include('inventories.form-inputs')
 
                     <div class="mt-10">
                         <a

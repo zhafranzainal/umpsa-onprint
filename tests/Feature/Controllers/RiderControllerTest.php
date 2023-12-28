@@ -39,7 +39,7 @@ class RiderControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.riders.index')
+            ->assertViewIs('riders.index')
             ->assertViewHas('riders');
     }
 
@@ -50,7 +50,7 @@ class RiderControllerTest extends TestCase
     {
         $response = $this->get(route('riders.create'));
 
-        $response->assertOk()->assertViewIs('app.riders.create');
+        $response->assertOk()->assertViewIs('riders.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class RiderControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.riders.show')
+            ->assertViewIs('riders.show')
             ->assertViewHas('rider');
     }
 
@@ -97,7 +97,7 @@ class RiderControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.riders.edit')
+            ->assertViewIs('riders.edit')
             ->assertViewHas('rider');
     }
 

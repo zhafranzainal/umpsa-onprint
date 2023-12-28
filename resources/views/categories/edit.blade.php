@@ -19,7 +19,7 @@
                     action="{{ route('categories.update', $category) }}"
                     class="mt-4"
                 >
-                    @include('app.categories.form-inputs')
+                    @include('categories.form-inputs')
 
                     <div class="mt-10">
                         <a

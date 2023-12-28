@@ -19,7 +19,7 @@
                     action="{{ route('permissions.update', $permission) }}"
                     class="mt-4"
                 >
-                    @include('app.permissions.form-inputs')
+                    @include('permissions.form-inputs')
 
                     <div class="mt-10">
                         <a

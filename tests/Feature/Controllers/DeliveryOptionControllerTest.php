@@ -39,7 +39,7 @@ class DeliveryOptionControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.delivery_options.index')
+            ->assertViewIs('delivery_options.index')
             ->assertViewHas('deliveryOptions');
     }
 
@@ -50,7 +50,7 @@ class DeliveryOptionControllerTest extends TestCase
     {
         $response = $this->get(route('delivery-options.create'));
 
-        $response->assertOk()->assertViewIs('app.delivery_options.create');
+        $response->assertOk()->assertViewIs('delivery_options.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class DeliveryOptionControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.delivery_options.show')
+            ->assertViewIs('delivery_options.show')
             ->assertViewHas('deliveryOption');
     }
 
@@ -99,7 +99,7 @@ class DeliveryOptionControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.delivery_options.edit')
+            ->assertViewIs('delivery_options.edit')
             ->assertViewHas('deliveryOption');
     }
 

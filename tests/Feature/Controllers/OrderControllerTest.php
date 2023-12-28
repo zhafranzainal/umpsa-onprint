@@ -44,7 +44,7 @@ class OrderControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.orders.index')
+            ->assertViewIs('orders.index')
             ->assertViewHas('orders');
     }
 
@@ -55,7 +55,7 @@ class OrderControllerTest extends TestCase
     {
         $response = $this->get(route('orders.create'));
 
-        $response->assertOk()->assertViewIs('app.orders.create');
+        $response->assertOk()->assertViewIs('orders.create');
     }
 
     /**
@@ -87,7 +87,7 @@ class OrderControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.orders.show')
+            ->assertViewIs('orders.show')
             ->assertViewHas('order');
     }
 
@@ -102,7 +102,7 @@ class OrderControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.orders.edit')
+            ->assertViewIs('orders.edit')
             ->assertViewHas('order');
     }
 

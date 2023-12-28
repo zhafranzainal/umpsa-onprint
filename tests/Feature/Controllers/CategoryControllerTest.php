@@ -39,7 +39,7 @@ class CategoryControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.categories.index')
+            ->assertViewIs('categories.index')
             ->assertViewHas('categories');
     }
 
@@ -50,7 +50,7 @@ class CategoryControllerTest extends TestCase
     {
         $response = $this->get(route('categories.create'));
 
-        $response->assertOk()->assertViewIs('app.categories.create');
+        $response->assertOk()->assertViewIs('categories.create');
     }
 
     /**
@@ -82,7 +82,7 @@ class CategoryControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.categories.show')
+            ->assertViewIs('categories.show')
             ->assertViewHas('category');
     }
 
@@ -97,7 +97,7 @@ class CategoryControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.categories.edit')
+            ->assertViewIs('categories.edit')
             ->assertViewHas('category');
     }
 

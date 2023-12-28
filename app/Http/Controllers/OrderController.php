@@ -63,7 +63,7 @@ class OrderController extends Controller
         $transactions = Transaction::pluck('id', 'id');
 
         return view(
-            'app.orders.create',
+            'orders.create',
             compact('outlets', 'categories', 'deliveryOptions', 'transactions')
         );
     }
@@ -107,7 +107,7 @@ class OrderController extends Controller
         $transactions = Transaction::pluck('id', 'id');
 
         return view(
-            'app.orders.edit',
+            'orders.edit',
             compact(
                 'order',
                 'outlets',

@@ -27,7 +27,7 @@ class TransactionController extends Controller
             ->withQueryString();
 
         return view(
-            'app.transactions.index',
+            'transactions.index',
             compact('transactions', 'search')
         );
     }

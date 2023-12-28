@@ -19,7 +19,7 @@
                     action="{{ route('outlets.store') }}"
                     class="mt-4"
                 >
-                    @include('app.outlets.form-inputs')
+                    @include('outlets.form-inputs')
 
                     <div class="mt-10">
                         <a href="{{ route('outlets.index') }}" class="button">

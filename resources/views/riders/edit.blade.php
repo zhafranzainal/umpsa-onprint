@@ -19,7 +19,7 @@
                     action="{{ route('riders.update', $rider) }}"
                     class="mt-4"
                 >
-                    @include('app.riders.form-inputs')
+                    @include('riders.form-inputs')
 
                     <div class="mt-10">
                         <a href="{{ route('riders.index') }}" class="button">

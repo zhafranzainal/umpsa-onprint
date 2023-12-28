@@ -41,7 +41,7 @@ class OutletControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.outlets.index')
+            ->assertViewIs('outlets.index')
             ->assertViewHas('outlets');
     }
 
@@ -52,7 +52,7 @@ class OutletControllerTest extends TestCase
     {
         $response = $this->get(route('outlets.create'));
 
-        $response->assertOk()->assertViewIs('app.outlets.create');
+        $response->assertOk()->assertViewIs('outlets.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class OutletControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.outlets.show')
+            ->assertViewIs('outlets.show')
             ->assertViewHas('outlet');
     }
 
@@ -99,7 +99,7 @@ class OutletControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.outlets.edit')
+            ->assertViewIs('outlets.edit')
             ->assertViewHas('outlet');
     }
 

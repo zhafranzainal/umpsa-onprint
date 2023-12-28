@@ -41,7 +41,7 @@ class PackageControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.packages.index')
+            ->assertViewIs('packages.index')
             ->assertViewHas('packages');
     }
 
@@ -52,7 +52,7 @@ class PackageControllerTest extends TestCase
     {
         $response = $this->get(route('packages.create'));
 
-        $response->assertOk()->assertViewIs('app.packages.create');
+        $response->assertOk()->assertViewIs('packages.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class PackageControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.packages.show')
+            ->assertViewIs('packages.show')
             ->assertViewHas('package');
     }
 
@@ -99,7 +99,7 @@ class PackageControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.packages.edit')
+            ->assertViewIs('packages.edit')
             ->assertViewHas('package');
     }
 

@@ -19,7 +19,7 @@
                     action="{{ route('packages.update', $package) }}"
                     class="mt-4"
                 >
-                    @include('app.packages.form-inputs')
+                    @include('packages.form-inputs')
 
                     <div class="mt-10">
                         <a href="{{ route('packages.index') }}" class="button">

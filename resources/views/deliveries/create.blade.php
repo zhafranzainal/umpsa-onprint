@@ -19,7 +19,7 @@
                     action="{{ route('deliveries.store') }}"
                     class="mt-4"
                 >
-                    @include('app.deliveries.form-inputs')
+                    @include('deliveries.form-inputs')
 
                     <div class="mt-10">
                         <a

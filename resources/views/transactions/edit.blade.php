@@ -19,7 +19,7 @@
                     action="{{ route('transactions.update', $transaction) }}"
                     class="mt-4"
                 >
-                    @include('app.transactions.form-inputs')
+                    @include('transactions.form-inputs')
 
                     <div class="mt-10">
                         <a

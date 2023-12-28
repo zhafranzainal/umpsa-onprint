@@ -19,7 +19,7 @@
                     action="{{ route('feedbacks.store') }}"
                     class="mt-4"
                 >
-                    @include('app.feedbacks.form-inputs')
+                    @include('feedbacks.form-inputs')
 
                     <div class="mt-10">
                         <a href="{{ route('feedbacks.index') }}" class="button">

@@ -19,7 +19,7 @@
                     action="{{ route('roles.update', $role) }}"
                     class="mt-4"
                 >
-                    @include('app.roles.form-inputs')
+                    @include('roles.form-inputs')
 
                     <div class="mt-10">
                         <a href="{{ route('roles.index') }}" class="button">

@@ -75,12 +75,7 @@
                             </p>
 
                             <p class="card-cost">RM{{ $category->price }}</p>
-                            <a href="cart.php"><button>Add to Cart</button></a>
-
-                            <form action="/action_page.php">
-                                <input type="file" id="myFile" name="filename">
-                                <input type="submit">
-                            </form>
+                            <a href="{{ route('orders.create') }}"><button>Add to Cart</button></a>
 
                         </div>
 

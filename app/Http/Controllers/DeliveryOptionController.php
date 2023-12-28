@@ -26,7 +26,7 @@ class DeliveryOptionController extends Controller
             ->withQueryString();
 
         return view(
-            'app.delivery_options.index',
+            'delivery_options.index',
             compact('deliveryOptions', 'search')
         );
     }

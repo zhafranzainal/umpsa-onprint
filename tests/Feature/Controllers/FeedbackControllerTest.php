@@ -41,7 +41,7 @@ class FeedbackControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.feedbacks.index')
+            ->assertViewIs('feedbacks.index')
             ->assertViewHas('feedbacks');
     }
 
@@ -52,7 +52,7 @@ class FeedbackControllerTest extends TestCase
     {
         $response = $this->get(route('feedbacks.create'));
 
-        $response->assertOk()->assertViewIs('app.feedbacks.create');
+        $response->assertOk()->assertViewIs('feedbacks.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class FeedbackControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.feedbacks.show')
+            ->assertViewIs('feedbacks.show')
             ->assertViewHas('feedback');
     }
 
@@ -99,7 +99,7 @@ class FeedbackControllerTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertViewIs('app.feedbacks.edit')
+            ->assertViewIs('feedbacks.edit')
             ->assertViewHas('feedback');
     }
 

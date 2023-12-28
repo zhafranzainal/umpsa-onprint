@@ -19,7 +19,7 @@
                     action="{{ route('complaints.store') }}"
                     class="mt-4"
                 >
-                    @include('app.complaints.form-inputs')
+                    @include('complaints.form-inputs')
 
                     <div class="mt-10">
                         <a
