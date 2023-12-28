@@ -76,8 +76,8 @@
     </x-inputs.group>
 
     <x-inputs.group class="w-full" style="display: inline-block; width: 28%;">
-        <x-inputs.number name="total_price" label="Total Price" :value="old('total_price', $editing ? $order->total_price : '')" max="255" step="0.01"
-            placeholder="Total Price" required>
+        <x-inputs.number name="total_price" label="Total Price" :value="old('total_price', $editing ? $order->total_price : $categoryPrice)" max="255" step="0.01"
+            placeholder="Total Price" required disabled>
         </x-inputs.number>
     </x-inputs.group>
 

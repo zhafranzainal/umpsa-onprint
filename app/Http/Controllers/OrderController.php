@@ -64,9 +64,12 @@ class OrderController extends Controller
 
         $categoryId = $request->input('category_id');
 
+        $category = Category::find($categoryId);
+        $categoryPrice = $category ? $category->price : null;
+
         return view(
             'orders.create',
-            compact('outlets', 'categories', 'deliveryOptions', 'transactions', 'categoryId')
+            compact('outlets', 'categories', 'deliveryOptions', 'transactions', 'categoryId', 'categoryPrice')
         );
     }
 
