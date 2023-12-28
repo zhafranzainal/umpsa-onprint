@@ -79,9 +79,7 @@ class OrderController extends Controller
 
         $order = Order::create($validated);
 
-        return redirect()
-            ->route('orders.edit', $order)
-            ->withSuccess(__('crud.common.created'));
+        return redirect()->route('orders.edit', $order)->withSuccess(__('crud.common.created'));
     }
 
     /**
@@ -121,19 +119,15 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(
-        OrderUpdateRequest $request,
-        Order $order
-    ): RedirectResponse {
+    public function update(OrderUpdateRequest $request, Order $order): RedirectResponse
+    {
         $this->authorize('update', $order);
 
         $validated = $request->validated();
 
         $order->update($validated);
 
-        return redirect()
-            ->route('orders.edit', $order)
-            ->withSuccess(__('crud.common.saved'));
+        return redirect()->route('orders.edit', $order)->withSuccess(__('crud.common.saved'));
     }
 
     /**
@@ -145,8 +139,6 @@ class OrderController extends Controller
 
         $order->delete();
 
-        return redirect()
-            ->route('orders.index')
-            ->withSuccess(__('crud.common.removed'));
+        return redirect()->route('orders.index')->withSuccess(__('crud.common.removed'));
     }
 }
