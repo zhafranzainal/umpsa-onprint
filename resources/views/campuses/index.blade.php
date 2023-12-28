@@ -10,7 +10,7 @@
                         <img src= "{{ asset('assets/images/campus.jpg') }}" style="width: 50px; height: 50px;"
                             alt= "printing">
 
-                        <a href="{{ route('orders.show-campus', ['campus' => $campus->id]) }}">
+                        <a href="{{ route('campuses.show', ['campus' => $campus->id]) }}">
                             <h5>{{ $campus->name }}</h5>
                         </a>
 

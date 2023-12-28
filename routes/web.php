@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CampusController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
@@ -47,8 +48,9 @@ Route::prefix('/')->middleware(['auth:sanctum', 'verified'])->group(function () 
     Route::resource('riders', RiderController::class);
     Route::resource('users', UserController::class);
 
-    Route::get('orders/campus', [OrderController::class, 'indexCampus'])->name('orders.index-campus');
-    Route::get('orders/campus/{campus}', [OrderController::class, 'showCampus'])->name('orders.show-campus');
+    Route::get('campus', [CampusController::class, 'index'])->name('campuses.index');
+    Route::get('campus/{campus}', [CampusController::class, 'show'])->name('campuses.show');
+
     Route::resource('orders', OrderController::class);
 
     Route::resource('transactions', TransactionController::class);

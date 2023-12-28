@@ -5,10 +5,8 @@
             <div class="col-md-7 mt-2">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="{{ route('orders.index-campus') }}">Order</a></li>
-                    <li><a href="(4) Payment/payment.php">Payment</a></li>
-                    <li><a href="{{ route('deliveries.index') }}">Delivery</a></li>
-                    <li><a href="(6) Sales and Admin/admin.html">Sales and Admin</a></li>
+                    <li><a href="{{ route('campuses.index') }}">Campus</a></li>
+                    <li><a href="{{ route('orders.index') }}">Order</a></li>
                 </ul>
             </div>
 
@@ -106,11 +104,11 @@
 
                     <div class="dropdown-menu">
 
-                        <a class="dropdown-item" href="{{ route('orders.show-campus', ['campus' => 1]) }}">
+                        <a class="dropdown-item" href="{{ route('campuses.show', ['campus' => 1]) }}">
                             UMPSA Pekan
                         </a>
 
-                        <a class="dropdown-item" href="{{ route('orders.show-campus', ['campus' => 2]) }}">
+                        <a class="dropdown-item" href="{{ route('campuses.show', ['campus' => 2]) }}">
                             UMPSA Gambang
                         </a>
 

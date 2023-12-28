@@ -18,28 +18,6 @@ class OrderController extends Controller
 {
 
     /**
-     * Display a listing of the campus.
-     */
-    public function indexCampus(Request $request): View
-    {
-        $this->authorize('view-any', Campus::class);
-
-        $campuses = Campus::All();
-        return view('orders.index-campus', compact('campuses'));
-    }
-
-    /**
-     * Display the specified campus.
-     */
-    public function showCampus(Request $request, Campus $campus): View
-    {
-        $this->authorize('view', $campus);
-
-        $categories = Category::All();
-        return view('orders.show-campus', compact('campus', 'categories'));
-    }
-
-    /**
      * Display a listing of the resource.
      */
     public function index(Request $request): View
