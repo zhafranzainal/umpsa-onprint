@@ -12,7 +12,8 @@
                     <br>
                     <h5 class="text-dark pl-4">@lang('crud.orders.create_title')</h5>
 
-                    <form method="POST" action="{{ route('orders.store') }}" class="mt-4">
+                    <form method="POST" action="{{ route('orders.store') }}" class="mt-4"
+                        enctype="multipart/form-data">
                         @csrf
 
                         @include('orders.form-inputs')

@@ -12,7 +12,10 @@
                     <br>
                     <h5 class="text-dark pl-4">@lang('crud.orders.edit_title')</h5>
 
-                    <x-form method="PUT" action="{{ route('orders.update', $order) }}" class="mt-4">
+                    <form method="POST" action="{{ route('orders.update', $order) }}" class="mt-4"
+                        enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
 
                         @include('orders.form-inputs')
 
@@ -26,7 +29,7 @@
                             <span class="text-danger">{{ $error }}</span><br>
                         @endforeach
 
-                    </x-form>
+                    </form>
 
                 </div>
             </div>

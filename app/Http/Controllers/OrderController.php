@@ -12,6 +12,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\OrderStoreRequest;
 use App\Http\Requests\OrderUpdateRequest;
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
 {
@@ -53,6 +54,18 @@ class OrderController extends Controller
         $this->authorize('create', Order::class);
 
         $validated = $request->validated();
+
+        // Handle file upload
+        if ($request->hasFile('document_file')) {
+            $file = $request->file('document_file');
+            $fileName = $file->getClientOriginalName();
+
+            // Store the file in the specified directory
+            $file->storeAs('public/documents', $fileName);
+
+            // Save only the file name to the database
+            $validated['document_file'] = $fileName;
+        }
 
         $category = Category::findOrFail($validated['category_id']);
         $totalPrice = $category->price * $validated['quantity'];
@@ -105,6 +118,22 @@ class OrderController extends Controller
         $this->authorize('update', $order);
 
         $validated = $request->validated();
+
+        if ($request->hasFile('document_file')) {
+
+            if ($order->document_file) {
+                Storage::delete($order->document_file);
+            }
+
+            $file = $request->file('document_file');
+            $fileName = $file->getClientOriginalName();
+
+            // Store the file in the specified directory
+            $file->storeAs('public/documents', $fileName);
+
+            // Save only the file name to the database
+            $validated['document_file'] = $fileName;
+        }
 
         $category = Category::findOrFail($validated['category_id']);
         $totalPrice = $category->price * $validated['quantity'];

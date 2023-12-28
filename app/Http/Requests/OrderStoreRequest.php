@@ -24,7 +24,7 @@ class OrderStoreRequest extends FormRequest
             'category_id' => ['required', 'exists:categories,id'],
             'delivery_option_id' => ['required', 'exists:delivery_options,id'],
             'transaction_id' => ['required', 'exists:transactions,id'],
-            'document_file' => ['required', 'max:255', 'string'],
+            'document_file' => ['file', 'required'],
             'quantity' => ['required', 'numeric'],
             'total_price' => ['nullable', 'numeric'],
             'point' => ['required', 'numeric'],

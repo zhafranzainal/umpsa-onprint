@@ -78,10 +78,6 @@
             </div>
         @endif
 
-        @error('document_file')
-            @include('components.inputs.partials.error')
-        @enderror
-
     </x-inputs.group>
 
     <x-inputs.group class="w-full" style="display: inline-block; width: 28%;">
