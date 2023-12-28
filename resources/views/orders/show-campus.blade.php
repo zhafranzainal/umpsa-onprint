@@ -66,8 +66,7 @@
                 <div class="col-md-3">
                     <div class="card">
 
-                        <img class="card-img-top img-fluid" src="{{ asset($category->image) }}"
-                            style="width:50px;height:50px;" alt="Card image cap">
+                        <img class="card-img-top img-fluid" src="{{ asset($category->image) }}" alt="Card image cap">
 
                         <div class="card-body">
 
