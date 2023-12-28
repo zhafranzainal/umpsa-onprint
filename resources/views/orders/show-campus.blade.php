@@ -62,125 +62,43 @@
 
         <div class="row">
 
-            <div class="col-md-3">
-                <div class="card">
+            @foreach ($categories as $category)
+                <div class="col-md-3">
+                    <div class="card">
 
-                    <img class="card-img-top img-fluid" src="../../Assets (images)/combbind.jpg"
-                        style="width:50px;height:50px;" alt="Card image cap">
+                        <img class="card-img-top img-fluid" src="{{ asset($category->image) }}"
+                            style="width:50px;height:50px;" alt="Card image cap">
 
-                    <div class="card-body">
+                        <div class="card-body">
 
-                        <p class="card-text">
-                            <a href="inner-productpage.html" class="text-dark">
-                                Comb Bind Notebook
-                            </a>
-                        </p>
+                            <p class="card-text">
+                                <a href="inner-productpage.html" class="text-dark">
+                                    {{ $category->name }}
+                                </a>
+                            </p>
 
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">30 reviews</label>
+                            <div class="ratings">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-secondary"></i>
+                                <label class="text-secondary ml-3">30 reviews</label>
+                            </div>
+
+                            <p class="card-cost">RM7.00</p>
+                            <a href="cart.php"><button>Add to Cart</button></a>
+
+                            <form action="/action_page.php">
+                                <input type="file" id="myFile" name="filename">
+                                <input type="submit">
+                            </form>
+
                         </div>
-
-                        <p class="card-cost">RM7.00</p>
-                        <a href="cart.php"><button>Add to Cart</button></a>
-
-                        <form action="/action_page.php">
-                            <input type="file" id="myFile" name="filename">
-                            <input type="submit">
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="../../Assets (images)/tapebind.jpg"
-                        style="width:50px;height:50px;" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Tape Bind Notebook</a>
-                        </p>
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">22 reviews</label>
-                        </div>
-                        <p class="card-cost">RM5.00</p>
-                        <a href="cart.php"><button>Add to Cart</button></a>
-                        <form action="/action_page.php">
-                            <input type="file" id="myFile" name="filename">
-                            <input type="submit">
-                        </form>
 
                     </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img class="card-img-top img-fluid" src="../../Assets (images)/thesis.jpg"
-                        style="width:50px;height:50px;" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Thesis Hard Cover</a>
-                        </p>
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">10 reviews</label>
-                        </div>
-                        <p class="card-cost">RM15.00</p>
-                        <a href="cart.php"><button>Add to Cart</button></a>
-                        <form action="/action_page.php">
-                            <input type="file" id="myFile" name="filename">
-                            <input type="submit">
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-
-                    <img class="card-img-top img-fluid" src="../../Assets (images)/poster.jpg"
-                        style="width:50px;height:50px;" alt="Card image cap">
-
-                    <div class="card-body">
-
-                        <p class="card-text"><a href="inner-productpage.html" class="text-dark">Poster</a></p>
-
-                        <div class="ratings">
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-warning"></i>
-                            <i class="fas fa-star text-secondary"></i>
-                            <label class="text-secondary ml-3">28 reviews</label>
-                        </div>
-
-                        <p class="card-cost">RM8.00</p>
-
-                        <a href="cart.php"><button>Add to Cart</button></a>
-
-                        <form action="/action_page.php">
-                            <input type="file" id="myFile" name="filename">
-                            <input type="submit">
-                        </form>
-
-                    </div>
-
-                </div>
-            </div>
+            @endforeach
 
         </div>
 

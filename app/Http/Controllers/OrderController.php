@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Outlet;
-use App\Models\Package;
 use Illuminate\View\View;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
@@ -13,6 +12,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\OrderStoreRequest;
 use App\Http\Requests\OrderUpdateRequest;
 use App\Models\Campus;
+use App\Models\Category;
 
 class OrderController extends Controller
 {
@@ -35,7 +35,8 @@ class OrderController extends Controller
     {
         $this->authorize('view', $campus);
 
-        return view('orders.show-campus', compact('campus'));
+        $categories = Category::All();
+        return view('orders.show-campus', compact('campus', 'categories'));
     }
 
     /**
@@ -57,13 +58,13 @@ class OrderController extends Controller
         $this->authorize('create', Order::class);
 
         $outlets = Outlet::pluck('name', 'id');
-        $packages = Package::pluck('name', 'id');
+        $categories = Category::pluck('name', 'id');
         $deliveryOptions = DeliveryOption::pluck('name', 'id');
         $transactions = Transaction::pluck('id', 'id');
 
         return view(
             'app.orders.create',
-            compact('outlets', 'packages', 'deliveryOptions', 'transactions')
+            compact('outlets', 'categories', 'deliveryOptions', 'transactions')
         );
     }
 
@@ -101,7 +102,7 @@ class OrderController extends Controller
         $this->authorize('update', $order);
 
         $outlets = Outlet::pluck('name', 'id');
-        $packages = Package::pluck('name', 'id');
+        $categories = Category::pluck('name', 'id');
         $deliveryOptions = DeliveryOption::pluck('name', 'id');
         $transactions = Transaction::pluck('id', 'id');
 
@@ -110,7 +111,7 @@ class OrderController extends Controller
             compact(
                 'order',
                 'outlets',
-                'packages',
+                'categories',
                 'deliveryOptions',
                 'transactions'
             )
