@@ -12,8 +12,7 @@
                     <br>
                     <h5 class="text-dark pl-4">@lang('crud.orders.create_title')</h5>
 
-                    <form method="POST" action="{{ route('orders.store') }}" class="mt-4">
-                        @csrf
+                    <x-form method="POST" action="{{ route('orders.store') }}" class="mt-4">
 
                         @include('orders.form-inputs')
 
@@ -27,7 +26,7 @@
                             <span class="text-danger">{{ $error }}</span><br>
                         @endforeach
 
-                    </form>
+                    </x-form>
 
                 </div>
             </div>
