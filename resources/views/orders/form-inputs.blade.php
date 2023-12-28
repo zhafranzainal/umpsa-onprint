@@ -63,10 +63,25 @@
         </x-inputs.select>
     </x-inputs.group>
 
-    <x-inputs.group class="w-full" style="display: inline-block; width: 28%;">
-        <x-inputs.text name="document_file" label="Document File" :value="old('document_file', $editing ? $order->document_file : '')" maxlength="255"
-            placeholder="Document File" required>
-        </x-inputs.text>
+    <x-inputs.group class="w-full">
+
+        <x-inputs.partials.label name="document_file" label="Document File"></x-inputs.partials.label>
+        <br>
+
+        <input type="file" name="document_file" id="document_file" class="form-control-file" />
+
+        @if ($editing && $order->document_file)
+            <div class="mt-2">
+                <a href="{{ asset('storage/documents/' . $order->document_file) }}" target="_blank">
+                    Download
+                </a>
+            </div>
+        @endif
+
+        @error('document_file')
+            @include('components.inputs.partials.error')
+        @enderror
+
     </x-inputs.group>
 
     <x-inputs.group class="w-full" style="display: inline-block; width: 28%;">
