@@ -12,7 +12,9 @@
             <x-partials.card>
 
                 <x-slot name="title">
-                    <a href="{{ route('orders.index') }}" class="mr-4"><i class="mr-1 icon ion-md-arrow-back"></i></a>
+                    <a href="{{ route('orders.index') }}" class="mr-4">
+                        <i class="mr-1 icon ion-md-arrow-back"></i>
+                    </a>
                 </x-slot>
 
                 <x-form method="PUT" action="{{ route('orders.update', $order) }}" class="mt-4">
