@@ -72,9 +72,7 @@
                         <div class="card-body">
 
                             <p class="card-text">
-                                <a href="inner-productpage.html" class="text-dark">
-                                    {{ $category->name }}
-                                </a>
+                                {{ $category->name }}
                             </p>
 
                             <div class="ratings">
