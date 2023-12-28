@@ -2,7 +2,7 @@
 
     <div class="container" id="card">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col">
                 <div class="card p-4" id="cards">
 
                     <a href="{{ route('orders.index-campus') }}" class="button">
