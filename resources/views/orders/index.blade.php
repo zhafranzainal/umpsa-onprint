@@ -1,26 +1,39 @@
 <x-app-layout>
 
     <div class="container">
-        <div class="row mt-4" id="border-line">
+        <table class="table table-striped">
 
-            @foreach ($campuses as $campus)
-                <div class="col-md-4">
-                    <div class="box">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Outlet Name</th>
+                    <th>Category Name</th>
+                    <th>Delivery Method</th>
+                    <th>Client Name</th>
+                    <th>Document File</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
 
-                        <img src= "{{ asset('assets/images/campus.jpg') }}" style="width: 50px; height: 50px;"
-                            alt= "printing">
+            <tbody>
+                @foreach ($orders as $order)
+                    <tr>
+                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->outlet->name }}</td>
+                        <td>{{ $order->category->name }}</td>
+                        <td>{{ $order->deliveryOption->name }}</td>
+                        <td>{{ $order->transaction->user->name }}</td>
+                        <td>{{ $order->document_file }}</td>
+                        <td>{{ $order->quantity }}</td>
+                        <td>RM {{ $order->total_price }}</td>
+                        <td>{{ $order->status }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
 
-                        <a href="campus-pekan.php">
-                            <h5>{{ $campus->name }}</h5>
-                        </a>
-
-                        <p>{{ $campus->outlets->count() }} printing service outlets at {{ $campus->name }}</p>
-
-                    </div>
-                </div>
-            @endforeach
-
-        </div>
+        </table>
     </div>
 
 </x-app-layout>

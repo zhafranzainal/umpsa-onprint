@@ -5,7 +5,7 @@
             <div class="col">
                 <div class="card p-4" id="cards">
 
-                    <a href="{{ route('campuses.index') }}" class="button">
+                    <a href="{{ route('orders.index') }}" class="button">
                         @lang('crud.common.back')
                     </a>
 

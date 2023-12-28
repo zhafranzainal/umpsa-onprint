@@ -11,7 +11,6 @@ use App\Models\DeliveryOption;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\OrderStoreRequest;
 use App\Http\Requests\OrderUpdateRequest;
-use App\Models\Campus;
 use App\Models\Category;
 
 class OrderController extends Controller
@@ -22,10 +21,10 @@ class OrderController extends Controller
      */
     public function index(Request $request): View
     {
-        $this->authorize('view-any', Campus::class);
+        $this->authorize('view-any', Order::class);
 
-        $campuses = Campus::All();
-        return view('orders.index', compact('campuses'));
+        $orders = Order::All();
+        return view('orders.index', compact('orders'));
     }
 
     /**
