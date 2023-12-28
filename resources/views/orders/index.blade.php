@@ -27,7 +27,14 @@
                         <td>{{ $order->category->name }}</td>
                         <td>{{ $order->deliveryOption->name }}</td>
                         <td>{{ $order->transaction->user->name }}</td>
-                        <td>{{ $order->document_file }}</td>
+
+                        <td>
+                            <a href="{{ asset('storage/documents/' . $order->document_file) }}" target="_blank">
+                                <i class="fa fa-file-pdf"></i>
+                                View PDF
+                            </a>
+                        </td>
+
                         <td>{{ $order->quantity }}</td>
                         <td>RM {{ $order->total_price }}</td>
                         <td>{{ $order->status }}</td>
