@@ -6,6 +6,7 @@
             <thead>
                 <tr>
                     <th>Order ID</th>
+                    <th>Campus Name</th>
                     <th>Outlet Name</th>
                     <th>Category Name</th>
                     <th>Delivery Method</th>
@@ -23,6 +24,7 @@
                     <tr>
 
                         <td>{{ $order->id }}</td>
+                        <td>{{ $order->outlet->campus->name }}</td>
                         <td>{{ $order->outlet->name }}</td>
                         <td>{{ $order->category->name }}</td>
                         <td>{{ $order->deliveryOption->name }}</td>
