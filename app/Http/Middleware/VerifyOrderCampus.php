@@ -24,7 +24,7 @@ class VerifyOrderCampus
 
         // Check if the order belongs to the current user's campus
         if (!$this->orderBelongsToUserCampus($order)) {
-            return redirect()->route('campuses.index')->with('error', 'Unauthorized: This order does not belong to your campus.');
+            return redirect()->route('orders.index')->with('error', 'Unauthorized: This order does not belong to your campus.');
         }
 
         return $next($request);
