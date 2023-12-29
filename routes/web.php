@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\OrderController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CampusController;
 use Illuminate\Support\Facades\Route;
 
