@@ -26,5 +26,7 @@ Route::prefix('/')->middleware(['auth:sanctum', 'verified'])->group(function () 
     Route::get('campus', [CampusController::class, 'index'])->name('campuses.index');
     Route::get('campus/{campus}', [CampusController::class, 'show'])->name('campuses.show');
 
-    Route::resource('orders', OrderController::class);
+    Route::resource('orders', OrderController::class)->except(['show']);
+
+    Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show')->middleware('verify.order.campus');
 });

@@ -44,6 +44,7 @@
                         <td>
 
                             <a href="{{ route('orders.edit', $order->id) }}">Edit</a>
+                            <a href="{{ route('orders.show', $order->id) }}">View</a>
 
                             <form action="{{ route('orders.destroy', $order->id) }}" method="POST" class="d-inline">
                                 @csrf
