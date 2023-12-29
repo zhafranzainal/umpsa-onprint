@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Campus;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -24,6 +25,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
+            'campus_id' => Campus::inRandomOrder()->pluck('id')->first(),
             'name' => $this->faker->name(),
             'email' => $this->faker->unique->email(),
             'email_verified_at' => now(),
