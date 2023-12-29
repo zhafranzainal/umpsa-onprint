@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Order;
-use App\Models\Outlet;
-use Illuminate\View\View;
-use App\Models\Transaction;
-use Illuminate\Http\Request;
-use App\Models\DeliveryOption;
-use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\OrderStoreRequest;
 use App\Http\Requests\OrderUpdateRequest;
+
 use App\Models\Category;
+use App\Models\DeliveryOption;
+use App\Models\Order;
+use App\Models\Outlet;
+use App\Models\Transaction;
+
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class OrderController extends Controller
 {
