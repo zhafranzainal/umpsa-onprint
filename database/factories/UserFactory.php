@@ -24,14 +24,18 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $fullName = $this->faker->name();
+        $words = explode(' ', $fullName);
+        $username = $words[0];
+
         return [
             'campus_id' => Campus::inRandomOrder()->pluck('id')->first(),
-            'name' => $this->faker->name(),
+            'name' => $fullName,
             'email' => $this->faker->unique->email(),
             'email_verified_at' => now(),
-            'username' => $this->faker->text(255),
+            'username' => $username,
             'password' => Hash::make('password'),
-            'mobile_no' => $this->faker->text(255),
+            'mobile_no' => $this->faker->mobileNumber(true, false),
             'remember_token' => Str::random(10),
         ];
     }

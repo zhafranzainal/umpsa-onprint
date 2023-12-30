@@ -16,7 +16,7 @@
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
 
-                            Welcome to OnPrint!
+                            Hi {{ auth()->user()->name }}!
 
                             <button type="submit" style="color: white; background: none; border: none; cursor: pointer;">
                                 Logout
