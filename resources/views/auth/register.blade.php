@@ -1,9 +1,11 @@
 <x-guest-layout>
     <x-authentication-card>
 
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+        <x-slot name="logo"></x-slot>
+
+        <div class="text-center mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800">Sign Up and Join Us!</h2>
+        </div>
 
         <x-validation-errors class="mb-4" />
 
