@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Campus;
 use App\Models\Category;
-use Illuminate\Http\Request;
 
 class CampusController extends Controller
 {
