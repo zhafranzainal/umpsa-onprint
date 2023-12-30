@@ -13,7 +13,15 @@
             @if (Route::has('login'))
                 <div class="col-md-5 mt-2 ">
                     @auth
-                        <h6>Welcome to OnPrint!</h6>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+
+                            Welcome to OnPrint!
+
+                            <button type="submit" style="color: white; background: none; border: none; cursor: pointer;">
+                                Logout
+                            </button>
+                        </form>
                     @else
                         <h6><a href="{{ route('login') }}" style="color: white;">Login</a></h6>
                     @endauth
